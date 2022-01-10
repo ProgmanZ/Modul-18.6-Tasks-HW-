@@ -1,33 +1,35 @@
 # Задача 7. IP-адрес 2
 
-def digit_check(ip_list):
-    return False if False in [True if x.isdigit() else False for x in user_string] else True
+flag = True
 
+def check_digit(list_digit):
+    list_temp = [True if i.isdigit() else False for i in list_digit]
+    return False in list_temp
 
-def size_check(ip_list):
-    return sum([int(x) if int(x) > 255 else 0 for x in user_string])
+def search_nodigit(list_check):
+    tmp_list = [i for i in list_check if not i.isdigit()]
+    return  tmp_list
 
+while flag:
 
-while True:
-    user_string = input('Введите IP адрес: ').split('.')
+    ip_address = input('Введите IP: ').split('.')
+    if len(ip_address) != 4:
+        print('IP адрес - это четыре группы положительных чисел, разделённые точками')
 
-    if len(user_string) != 4:
-        print('IP адрес представляет 4 группы цифр, разделенных точкой.')
+    elif check_digit(ip_address):
+        print(','.join(search_nodigit(ip_address)), ' - Проверьте введенные вами данные.\n'
+                                                    'IP адрес - это четыре группы положительных чисел,'
+                                                    ' разделённые точками')
+
+    elif 0 == int(ip_address[0]) or 0 == int(ip_address[3]):
+        print('IP адрес не может начинаться и заканчиваться значением = 0')
 
     else:
-        if not digit_check(user_string):
-            print('В IP адресе должны использоваться только цифры из диаппазона от 0 до 255.')
-            continue
+        for i in ip_address:
+            if int(i) >= 255:
+                flag = True
+                print(i, 'Значение превышает или равно 255')
+            else:
+                flag = False
 
-        elif 0 == int(user_string[0]) or 0 == int(user_string[3]):
-            print('Первая или последняя группа цифр не может быть = 0.')
-            continue
-
-        elif size_check(user_string) > 0:
-            print('В IP адресе должны использоваться только цифры из диаппазона от 0 до 255.')
-            print(size_check(user_string), 'превышает 255.')
-            continue
-
-        else:
-            print('IP адрес верный.')
-            break
+print('\nIP-адрес корректен: ', '.'.join(ip_address))
