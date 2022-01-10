@@ -1,5 +1,6 @@
 # Задача 7. IP-адрес 2
 
+
 flag = True
 
 def check_digit(list_digit):
