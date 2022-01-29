@@ -1,6 +1,6 @@
 # Задача 7. IP-адрес 2
 
-
+ip_address = []
 flag = True
 
 
@@ -19,7 +19,6 @@ while flag:
     ip_address = input('Введите IP: ').split('.')
     if len(ip_address) != 4:
         print('IP адрес - это четыре группы положительных чисел, разделённые точками')
-
 
     elif check_digit(ip_address):
         print(','.join(search_nodigit(ip_address)), ' - Проверьте введенные вами данные.\n'
