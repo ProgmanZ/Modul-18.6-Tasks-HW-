@@ -12,7 +12,13 @@ def check_string(one_string, two_string):
 
 first_string = input('Первая строка: ')
 second_string = input('Вторая строка: ')
-
+len_first = len(first_string)
+count = 0
+while len_first:
+    if first_string[count] == second_string[-1 * len_first]:
+        count += 1
+    else:
+        len_first -=1
 if len(first_string) == len(second_string):
 
     flag, result = check_string(first_string, second_string)

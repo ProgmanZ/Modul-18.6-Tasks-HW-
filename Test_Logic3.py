@@ -1,6 +1,5 @@
-# Задача 10. Истина
-
-user_text = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm ' \
+# a = 'utifulBea si terbet ntha y/ugl icitExpl is erbett than icit/impl eSimpl si rbette hant ex/compl'
+a = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm ' \
             'tj scfuuf ibou fy/dpnqm yDpnqmf jt cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ' \
             'ouib oftufe/ bstfTq jt uufscf uibo otf/ef uzSfbebcjmj vout/dp djbmTqf dbtft ' \
             '(ubsfo djbmtqf hifopv up csfbl ifu t/svmf ipvhiBmu zqsbdujdbmju fbutc uz/qvsj ' \
@@ -12,31 +11,13 @@ user_text = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fT
             'Jg fui foubujpojnqmfn jt fbtz up bjo-fyqm ju znb cf b hppe jefb/ bnftqbdftO ' \
             'bsf pof ipoljoh sfbuh efbj .. fu(tm pe psfn gp tf"uip"'
 
-english_letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-count = 1
-new_text = []
-while count:
-    for i in user_text:
-        if i in english_letters:
-            index_eng = english_letters.index(i) - count
-            new_text.append(english_letters[index_eng])
-        else:
-            new_text.append(i)
-    count -= 1
-
-a = ''.join(new_text)
-
-print("Text:", a)
-print()
-
-new_text = a.split()
+user_text = a.split()
 new_word = ''
 new_line_text = []
 new_user_text = ''
 k = 3
 
-for word in new_text:
+for word in user_text:
     if len(word) == 2 and k % 2 == 1:
         new_word = word[-1:] + word[:-1]
     else:
@@ -47,10 +28,8 @@ for word in new_text:
     if '/' in word:
         k += 1
         new_line_text.append('\n')
-    if k ==
 
 new_user_text = ' '.join(new_line_text)
 
 
 print(new_user_text)
-
